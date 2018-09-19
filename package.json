@@ -1,0 +1,63 @@
+{
+  "name": "vstda",
+  "version": "0.1.0",
+  "description": "REACT100 Assignment - VSTDA",
+  "main": "server/index.js",
+  "scripts": {
+    "build": "npm run less && webpack",
+    "start": "node server/index.js",
+    "less": "lessc src/css/style.less dist/css/style.css",
+    "lint": "eslint .",
+    "test": "npm run build && mocha test/.setup.js test/*.spec.js --exit"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "bluebird": "^3.5.0",
+    "chai": "^3.5.0",
+    "expect": "^1.20.2",
+    "express": "^4.15.3",
+    "json-loader": "^0.5.4",
+    "lodash": "^4.15.0",
+    "lodash-webpack-plugin": "^0.10.2",
+    "morgan": "^1.8.1",
+    "nightmare": "^2.10.0",
+    "nightmare-react-utils": "^1.0.4",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "serve-favicon": "^2.0.1",
+    "webpack": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.5.3",
+    "axios-mock-adapter": "^1.6.1",
+    "babel": "^6.3.26",
+    "babel-loader": "^7.1.1",
+    "babel-preset-airbnb": "^1.0.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.4.3",
+    "chai-as-promised": "^5.3.0",
+    "chai-http": "^3.0.0",
+    "csx": "^4.0.0",
+    "enzyme": "^2.4.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-config-loopback": "^4.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-lodash-fp": "^2.1.3",
+    "eslint-plugin-react": "^6.2.0",
+    "file-loader": "^0.11.2",
+    "less": "^2.7.1",
+    "less-plugin-autoprefix": "^1.5.1",
+    "mocha": "^3.0.2",
+    "react-addons-test-utils": "^15.6.0",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
+    "url-loader": "^0.5.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/origincodeacademy/startnow-react100-vstda.git"
+  },
+  "license": "MIT"
+}
