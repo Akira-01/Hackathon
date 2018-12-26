@@ -15,19 +15,25 @@ class App extends Component {
     ]
     
     
-    
-    this.state = {rows: [
-    <p key="1">This is my row0</p>,
-    <p key="2">This is my row1</p>,
-    <p key="3">This is my row2</p>
-    ]}
+  
   
   
    var movieRows =[]
-  
-   movies.forEach ((movie) => {
+    movies.forEach ((movie) => {
     console.log(movie.id)
-    movieRows.push(<p key={movie.id}>movie title:{movie.title}</p>)
+    const movieRow =<table key={movie.id}>
+      <tbody>
+        <tr>
+          <td>
+            <img alt="poster" src=""/>
+          </td>
+          <td>
+            {movie.title}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    movieRows.push(movieRow)
   })
 
   this.state = {rows: movieRows}
