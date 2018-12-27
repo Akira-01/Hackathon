@@ -1,48 +1,56 @@
 import React, { Component } from 'react';
+// import './App.css';
+import MovieRow from './MovieRow.js'
+import $ from 'jquery'
+
 
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    console.log("This is my initializer")
-    
-    
-    const movies =[
-      {id: 0, title:"Avengers: Infinity War", overview:"The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe"},
-      {id: 1, title:"Avengers", overview:"This is my second overview"},
-    
-    ]
-    
-    
-  
-  
-  
-   var movieRows =[]
-    movies.forEach ((movie) => {
-    console.log(movie.id)
-    const movieRow =<table key={movie.id}>
-      <tbody>
-        <tr>
-          <td>
-            <img alt="poster" src=""/>
-          </td>
-          <td>
-            {movie.title}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    movieRows.push(movieRow)
-  })
+    this.state ={}
 
-  this.state = {rows: movieRows}
+  //   console.log("This is my initializer")
+    
+    
+  //   const movies =[
+  //     {id: 0, poster_src:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+  //      title:"Avengers: Infinity War", overview:"The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe"},
+  //     {id: 1, poster_src:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/cezWGskPY5x7GaglTTRN4Fugfb8.jpg",
+  //      title:"Avengers", overview:"This is my second overview"},
+    
+  //   ]
+  //   var movieRows =[]
+  //   movies.forEach ((movie) => {
+  //   console.log(movie.id)
+  //   const movieRow = <MovieRow movie={movie} />
+  //   movieRows.push(movieRow)
+  // })
+
+  // this.state = {rows: movieRows}
+  this.performSearch()
 } 
   
-  render() {
+ performSearch(){
+   console.log("Perform search using moviedb")
+   const urlString = "https://api.themoviedb.org/3/movie/550?api_key=c083c206a293bfed7565624bdf2ca4f8"
+    $.ajax({
+      url: urlString,
+      success: (searchResults) => {
+        console.log("Fetched data successfully")
+      },
+      error: (xhr, status, err) => {
+        console.log("Failed to fetch data")
+      }
+    })
+  } 
+
+
+render() {
     return (
 
-      <div className='App' >
+      <div>
 
         <table className="titleBar">
           <tbody>
