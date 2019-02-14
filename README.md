@@ -9,5 +9,8 @@ npm run build && npm start
 
 #### View button will link you to the movie DB with information of the movie
 
+![screen shot 2019-02-14 at 12 54 16 pm](https://user-images.githubusercontent.com/18974511/52817314-5c947800-3058-11e9-9382-dd86d563c237.png)
+
+
 
 
